@@ -79,8 +79,10 @@ form input[type="submit"]:hover {
     margin: 10px;
     flex: 1;
     border-radius: 5px;
-    text-align: center;
     min-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media ( max-width: 768px ) {
