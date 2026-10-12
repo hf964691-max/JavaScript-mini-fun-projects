@@ -21,9 +21,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/weather", async (req, res) => {
-  const city = req.query.city;
+  const cityParam = Array.isArray(req.query.city) ? req.query.city[0] : req.query.city;
+  const city = typeof cityParam === "string" ? cityParam.trim() : "";
 
-  if (typeof city !== "string" || !city.trim()) {
+  if (!city) {
     throw new ApiError(400, "A city query parameter is required.");
   }
 
@@ -33,7 +34,7 @@ app.get("/api/weather", async (req, res) => {
 
   const url = new URL("https://api.openweathermap.org/data/2.5/weather");
   url.search = new URLSearchParams({
-    q: city.trim(),
+    q: city,
     appid: process.env.API_KEY,
     units: "metric",
   }).toString();
@@ -63,6 +64,10 @@ app.get("/api/weather", async (req, res) => {
   } catch (error) {
     console.error("Weather service returned an invalid response:", error);
     throw new ApiError(502, "Weather service returned an invalid response.");
+  }
+
+  if (!data || !data.main || !Array.isArray(data.weather)) {
+    throw new ApiError(502, "Weather service returned an incomplete response.");
   }
 
   return res.status(200).json(new ApiResponse(200, data, "Weather retrieved."));
