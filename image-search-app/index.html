@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover beautiful photography from around the world."
+    />
+    <meta name="theme-color" content="#f6f4ef" />
+    <title>Still — Find your next favorite image</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Still home">
+        <span class="brand-mark" aria-hidden="true">s.</span>
+        <span>still<span class="brand-period">.</span></span>
+      </a>
+      <span class="header-note">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>A little inspiration, daily</span>
+        <span class="header-divider" aria-hidden="true"></span>
+        <span class="header-author">by Huzaifa</span>
+      </span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> THE WORLD, IN PICTURES</p>
+          <h1 id="hero-title">Find a little<br /><em>perspective.</em></h1>
+          <p class="hero-description">
+            A thoughtful collection of images for wherever your curiosity takes you.
+          </p>
+
+          <form class="search-form" role="search">
+            <label class="visually-hidden" for="search-input">Search for images</label>
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 4.2 4.2"></path>
+              </svg>
+            </span>
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Try “quiet mornings” or “wild places”"
+              autocomplete="off"
+            />
+            <button id="search-button" type="submit">
+              <span>Explore</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <div class="popular-searches" aria-label="Popular searches">
+            <span class="popular-label">A few ideas</span>
+            <button class="topic-chip" type="button" data-query="Slow living">Slow living</button>
+            <button class="topic-chip" type="button" data-query="Architecture">Architecture</button>
+            <button class="topic-chip" type="button" data-query="Ocean">Ocean</button>
+            <button class="topic-chip" type="button" data-query="Wildflowers">Wildflowers</button>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-sun"></div>
+          <div class="art-hill hill-back"></div>
+          <div class="art-hill hill-front"></div>
+          <div class="art-caption"><span>01 / 04</span><span>A slower kind of search</span></div>
+        </div>
+        <div class="hero-index" aria-hidden="true">01 — 04</div>
+      </section>
+
+      <section class="gallery-section" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <div>
+            <p class="eyebrow gallery-eyebrow">YOUR VISUAL JOURNEY</p>
+            <h2 id="gallery-title">A world worth <em>looking at.</em></h2>
+          </div>
+          <p class="gallery-note">Thoughtfully found. Ready to explore.</p>
+        </div>
+        <p class="search-status" role="status" aria-live="polite">
+          Search for a mood, place, or moment to get started.
+        </p>
+        <div class="search-results" aria-label="Image search results"></div>
+        <button id="show-more-button" type="button">
+          <span>Discover more</span><span aria-hidden="true">↓</span>
+        </button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="./" aria-label="Still home">
+        <span class="brand-mark" aria-hidden="true">s.</span><span>still<span class="brand-period">.</span></span>
+      </a>
+      <p class="footer-credit">
+        <span class="footer-credit-label">CREATED WITH CARE BY</span>
+        <span class="footer-name">Huzaifa<span class="brand-period">.</span></span>
+      </p>
+      <span>Images via Unsplash</span>
+    </footer>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
