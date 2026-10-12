@@ -27,6 +27,10 @@ async function getWeatherData(cityValue) {
     }
     const data = result.data;
 
+    if (!data || !data.main || !Array.isArray(data.weather) || !data.wind) {
+      throw new Error("Weather data is unavailable.");
+    }
+
     const temperature = Math.round(data.main.temp);
     const description = data.weather[0].description;
     const icon = data.weather[0].icon;
