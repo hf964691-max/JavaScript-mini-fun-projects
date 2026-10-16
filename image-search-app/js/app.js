@@ -52,6 +52,7 @@ const blockSearch = [
   "creampie",
 ];
 
+
 function containsBlockedTerm(query) {
   if (typeof query !== "string") {
     return false;
